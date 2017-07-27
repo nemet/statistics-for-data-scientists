@@ -68,7 +68,7 @@ state_abb <- state %>%
   summarize(state = paste(Abbreviation, collapse=","), .drop=FALSE) %>%
   complete(PopFreq, fill=list(state='')) %>%
   select(state)
-unlist(state_abb)
+state_abb <- unlist(state_abb)
 
 lower_br <- formatC(breaks[1:10], format="d", digits=0, big.mark=",")
 upper_br <- formatC(c(breaks[2:10]-1, breaks[11]), format="d", digits=0, big.mark=",")
